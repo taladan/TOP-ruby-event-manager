@@ -1,4 +1,3 @@
-# form_letter.html
 <html>
   <head>
     <meta charset="UTF-8" />
@@ -19,12 +18,12 @@
     <table>
       <% if legislators.kind_of?(Array) %>
         <th>Name</th><th>Website</th>
-        <% legislators.each do |legislator| %>
-        <tr>
-          <td><%= "#{legislator.name} %></td>
-          <td><% "#{legislator.urls.join(" ")} unless legislator.urls.nil? %></td>
-        </tr>
-        <% end %> 
+          <% legislators.each do |legislator| %>
+          <tr>
+            <td><%= "#{legislator.name}" %></td>
+            <td><%= "#{legislator.urls.join(" ")}" unless legislator.urls.nil? %></td>
+          </tr>
+          <% end %> 
       <% else %>
         <th></th>
         <td><%= #{legislators}" %></td>
