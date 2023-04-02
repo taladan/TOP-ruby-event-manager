@@ -68,6 +68,7 @@ def target_time(csv)
     time_obj = Time.strptime(row[:regdate], "%m/%d/%y %H:%M")
     date_obj = Date.strptime(row[:regdate], "%m/%d/%y %H:%M")
     tracker[time_obj.hour] += 1
+    # #stftime(%A) -> Returns name of day
     day_tracker[date_obj.strftime("%A")] += 1
   end
 
