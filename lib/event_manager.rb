@@ -2,7 +2,6 @@ require "csv"
 require "date"
 require "erb"
 require "google/apis/civicinfo_v2"
-require "pry-byebug"
 require "time"
 
 def legislators_by_zipcode(zip)
@@ -70,7 +69,6 @@ def target_time(csv)
     date_obj = Date.strptime(row[:regdate], "%m/%d/%y %H:%M")
     tracker[time_obj.hour] += 1
     day_tracker[date_obj.strftime("%A")] += 1
-    # binding.pry
   end
 
   best_day = day_tracker.max_by { |k, v| v }
